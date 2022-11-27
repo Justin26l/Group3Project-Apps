@@ -9,7 +9,12 @@ const routes: Routes = [
   {
     path: 'tab4',
     loadChildren: () => import('./tab4/tab4.module').then( m => m.Tab4PageModule)
+  },
+  {
+    path: 'menu-category/:cat',
+    loadChildren: () => import('./menu-category/menu-category.module').then( m => m.MenuCategoryPageModule)
   }
+
 ];
 @NgModule({
   imports: [
