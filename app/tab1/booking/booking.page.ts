@@ -42,7 +42,7 @@ export class BookingPage implements OnInit {
       (data:any)=>{
 
         console.log(data);
-        if(data.status == "OK") {
+        if(data.status == "ok") {
           console.log('success',data);
           this.router.navigate(["/tabs/tab1/thanks"]);
         } else {
