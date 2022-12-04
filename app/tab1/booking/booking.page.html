@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Booking</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="bookingForm" class="ion-padding">
+    <ion-item>
+      <ion-label for="name">Name:</ion-label>
+      <ion-input id="name" [clearInput]="true" formControlName="name" type="name" placeholder="Please input your name">
+      </ion-input>
+    </ion-item>
+    <br/>
+    <br/>
+    <ion-item>
+      <ion-label for="name">Person:</ion-label>
+      <ion-input id="name" [clearInput]="true" formControlName="people" type="number" placeholder="Please input your person">
+      </ion-input>
+    </ion-item>
+    <br/>
+    <br/>
+    <ion-item>
+      <ion-label for="name">Booking_Time:</ion-label>
+      <ion-input id="name" [clearInput]="true" formControlName="booking_time" type="time" placeholder="Please input your booking_time">
+      </ion-input>
+    </ion-item>
+    <br/>
+    <br/>
+    <ion-item>
+      <ion-label for="name">Comment:</ion-label>
+      <ion-input id="name" [clearInput]="true" formControlName="comment" type="text" placeholder="Please input your comment">
+      </ion-input>
+    </ion-item>
+
+
+      <ion-button expand="full" (click)="submitBooking()">Submit</ion-button>
+    
+  </form>
+</ion-content>

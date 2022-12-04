@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Branchs
+      McDonald
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -15,30 +15,12 @@
 
   <ion-grid>
     <ion-row>
-      <ion-col size="6">
+      <ion-col size="6" *ngFor="let item of branchList">
         <ion-card class="m-1">
-          <img src="https://via.placeholder.com/720x480">
-          <div class="ion-padding-start">
-            <h1 class="m-0">Name</h1>
-            <p>Description</p>
-          </div>
-        </ion-card>
-      </ion-col>
-      <ion-col size="6">
-        <ion-card class="m-1">
-          <img src="https://via.placeholder.com/720x480">
-          <div class="ion-padding-start">
-            <h1 class="m-0">Name</h1>
-            <p>Description</p>
-          </div>
-        </ion-card>
-      </ion-col>
-      <ion-col size="6">
-        <ion-card class="m-1">
-          <img src="https://via.placeholder.com/720x480">
-          <div class="ion-padding-start">
-            <h1 class="m-0">Name</h1>
-            <p>Description</p>
+          <div class="ion-padding-start" routerLink="/tabs/tab1/booking/{{item.branch_id}}">
+          <img [src]="item.images">
+            <h1 class="m-0">{{item.branch_name}}</h1>
+            <p>{{item.description}}</p>
           </div>
         </ion-card>
       </ion-col>
