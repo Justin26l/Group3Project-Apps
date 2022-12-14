@@ -14,7 +14,7 @@
     <ion-row>
       <ion-col size="6" *ngFor="let x of FoodCat">
         <ion-card class="m-0">
-          <img src="{{x.img}}">
+          <img src="{{glob.base_url+x.img}}">
           <div style="padding-left: 10px;">
             <h3 class="m-0">{{x.prod_name}}</h3>
             <p class="m-1">{{x.description}}</p>

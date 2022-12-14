@@ -28,7 +28,7 @@ export class BookingPage implements OnInit {
     private http: HttpClient,
     private alertController: AlertController,
     private apiService: BookingService,
-    private router: Router
+    private router: Router,
     ) { }
 
   ngOnInit() {

@@ -12,8 +12,8 @@
     <ion-row>
       <ion-col size="6" *ngFor="let item of branchList">
         <ion-card class="m-1">
+          <img style="padding:3px"[src]="glob.base_url+item.img">
           <div class="ion-padding-start" routerLink="/tabs/tab1/booking/{{item.branch_id}}">
-          <img [src]="item.images">
             <h1 class="m-0">{{item.branch_name}}</h1>
             <p>{{item.description}}</p>
           </div>
