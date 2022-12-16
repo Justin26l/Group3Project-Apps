@@ -10,6 +10,8 @@ export class ThanksPage implements OnInit {
   constructor() { }
 
   ngOnInit() {
+
+    
   }
 
 }

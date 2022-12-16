@@ -3,7 +3,7 @@ import { FormControl, FormGroup } from '@angular/forms';
 import { HttpClient } from '@angular/common/http'
 import { AlertController } from '@ionic/angular';
 import { BookingService } from 'src/app/services/booking.service';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-booking',
@@ -14,29 +14,36 @@ export class BookingPage implements OnInit {
 
   submitdata:any;
 
+  branch_id:string = "";
+
   name = new FormControl('');
   bookingForm = new FormGroup({
     name: new FormControl(''),
-    mobile: new FormControl(''),
-    people: new FormControl(''),
+    // mobile: new FormControl(''),
+    person: new FormControl(''),
     booking_time: new FormControl(''),
     comment: new FormControl(''),
   });
+
 
 
   constructor(
     private http: HttpClient,
     private alertController: AlertController,
     private apiService: BookingService,
-    private router: Router
+    private router: Router,
+    private route: ActivatedRoute
     ) { }
 
   ngOnInit() {
+
+    this.branch_id = this.route.snapshot.params['id'];
   }
 
   submitBooking(){
 
     this.submitdata=this.bookingForm.value;
+    this.submitdata['book_branch'] = this.branch_id;
 
     this.apiService.createBooking(this.submitdata).subscribe(
       (data:any)=>{
