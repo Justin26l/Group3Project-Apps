@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { GlobalVariableService } from '../../../services/global-variable.service';
+import { CartService } from '../../../services/cart.service';
 
 @Component({
   selector: 'app-order-menu',
@@ -7,7 +9,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OrderMenuPage implements OnInit {
 
-  constructor() { }
+  constructor(
+    private glob : GlobalVariableService,
+    private cart : CartService,
+  ) { }
 
   ngOnInit() {
   }

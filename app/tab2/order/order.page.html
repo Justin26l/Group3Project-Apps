@@ -1,9 +1,51 @@
 <ion-header>
   <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
     <ion-title>order</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  
+  <!-- Dine in or take away function -->
+  <!-- <h2 class="ion-padding-start">I want to</h2>
+  <ion-radio-group name="isdine">
+    <ion-item >
+      <ion-label>Dine In</ion-label>
+      <ion-radio slot="end" value="true" checked=true (click)="isDine(true)"></ion-radio>
+    </ion-item>
+    <ion-item>
+      <ion-label>Take Away</ion-label>
+      <ion-radio slot="end" value="false" (click)="isDine(false)"></ion-radio>
+    </ion-item>
+  </ion-radio-group> -->
 
+  <h2 class="ion-padding-start ion-padding-top">Branch</h2>
+  <ion-item>
+    <ion-select placeholder="Branch" [(ngModel)]="orderForm.order_branch">
+      <ion-select-option *ngFor="let x of BS.branchList | keyvalue" value="{{x.value.branch_id}}">{{x.value.branch_name}}<br>({{x.value.location}})</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-item [class.ion-hide]="!orderForm.is_dine" class="ion-padding-top">
+    <ion-label>Table</ion-label>
+    <ion-input placeholder="Table Number" [(ngModel)]="orderForm.table"></ion-input>
+  </ion-item>
+
+  <ion-item [class.ion-hide]="orderForm.is_dine" class="ion-padding-top">
+    <ion-label>Time Pickup</ion-label>
+    <ion-datetime presentation="time" min="{{ISO_date_now}}" [(ngModel)]="time_preprocess"></ion-datetime>
+  </ion-item>
+
+  <ion-item class="ion-padding-top">
+    <ion-label>Name</ion-label>
+    <ion-input placeholder="Your Name" [(ngModel)]="orderForm.order_by"></ion-input>
+  </ion-item>
+
+  <ion-button class="footer" expand="full" (click)="toMenu()">
+    Continue
+  </ion-button>
+  
 </ion-content>
