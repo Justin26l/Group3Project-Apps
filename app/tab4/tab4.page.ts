@@ -1,4 +1,6 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { GlobalVariableService } from '../services/global-variable.service';
 
 @Component({
   selector: 'app-tab4',
@@ -7,9 +9,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Tab4Page implements OnInit {
 
-  constructor() { }
+  public about ;
+
+  constructor(
+    private http:HttpClient,
+    private glob:GlobalVariableService,
+  ) { }
 
   ngOnInit() {
+    this.http.get(this.glob.base_url+"api/read/about").subscribe({
+      next:(data)=>{
+        console.log(data['result'][0]);
+        this.about = data['result'][0];
+      },
+      error:(data)=>{
+        console.log(data);
+      }
+    });
   }
 
 }

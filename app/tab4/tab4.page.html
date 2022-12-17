@@ -6,6 +6,23 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content style="text-align: center;">
+  <div style="margin:0 auto;">
+    <img src="{{about.logo}}" style="width:50%;padding-top: 50px;">
+  </div>
+
+  <h1>{{about.company_name}}</h1>
+
+  <p style="font-size: 14px;" [innerHTML]="about.description"></p>
+
+  <p>
+    <b>Customer Service</b><br>
+    {{about.customer_service_no}}
+  </p>
+
+  <p>
+    <b>Bussiness Contact ({{about.bussiness_name}})</b><br>
+    {{about.bussiness_no}}
+  </p>
 
 </ion-content>
