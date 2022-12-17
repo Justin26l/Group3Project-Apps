@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Order Menu</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-fab  slot="fixed" vertical="bottom" horizontal="end">
+    <ion-fab-button  [routerLink]="['checkout']">
+      <ion-icon name="cart-outline" (click)="cart.out_cart()"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+  <h1 class="p-1">Select your dishes</h1>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col *ngFor="let x of menu.FoodCategory" size="6">
+        <ion-card class="m-1 ion-text-center ion-align-items-center" [routerLink]="['order-menu-category',x]">
+          <img style="width:100%" src="{{glob.base_url+menu.FoodList[x][0]['img']}}">
+          <h1 style="display: inline;">{{x}}</h1>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
