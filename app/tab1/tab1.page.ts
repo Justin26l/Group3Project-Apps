@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { AuthService } from '../services/auth.service';
 import { BranchService } from '../services/branch.service';
+import { GlobalVariableService } from '../services/global-variable.service';
 
 @Component({
 	selector: 'app-tab1',
@@ -14,6 +15,7 @@ export class Tab1Page {
 
 
 	constructor(
+		private glob:GlobalVariableService,
 		private bh: BranchService,
 		private auth: AuthService
 	) {

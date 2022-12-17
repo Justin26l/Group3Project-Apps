@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { GlobalVariableService } from '../services/global-variable.service';
 import { MenuService } from '../services/menu.service';
 
 @Component({
@@ -14,6 +15,7 @@ export class MenuCategoryPage implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private menu:MenuService,
+    private glob:GlobalVariableService,
   ) { }
 
   ngOnInit() {

@@ -33,6 +33,7 @@ export class BookingPage implements OnInit {
     private apiService: BookingService,
     private router: Router,
     private route: ActivatedRoute
+
     ) { }
 
   ngOnInit() {
