@@ -13,7 +13,7 @@ const routes: Routes = [
   {
     path: 'menu-category/:cat',
     loadChildren: () => import('./menu-category/menu-category.module').then( m => m.MenuCategoryPageModule)
-  }
+  },
 
 ];
 @NgModule({
