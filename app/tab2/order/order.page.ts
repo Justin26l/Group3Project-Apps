@@ -62,13 +62,14 @@ export class OrderPage implements OnInit {
       (this.orderForm.is_dine && this.orderForm.table=="") || 
       (!this.orderForm.is_dine && this.orderForm.pickup_time=="")
     ){
-      this.alert.presentAlert("Warning","Please fill all of the form.");
+      this.alert.presentAlert("Warning","Please fill all of the form.","");
       return;
     };
 
     // to next step
     this.cart.order = this.orderForm;
     // console.log(this.cart.order);
+    
     this.route.navigateByUrl('/tabs/tab2/order/order-menu');
   }
 

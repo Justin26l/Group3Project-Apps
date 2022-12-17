@@ -8,6 +8,11 @@
 
 <ion-content [fullscreen]="true">
 
+  <ion-fab slot="fixed" vertical="bottom" horizontal="end" routerLink="order">
+    <ion-fab-button>
+      <ion-icon name="clipboard-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
   <ion-grid>
     <ion-row *ngFor="let x of menu.FoodCategory">
       <ion-col size="12">

@@ -7,6 +7,10 @@ const routes: Routes = [
   {
     path: '',
     component: OrderMenuPage
+  },
+  {
+    path: 'order-menu-category/:cat',
+    loadChildren: () => import('./order-menu-category/order-menu-category.module').then( m => m.OrderMenuCategoryPageModule)
   }
 ];
 

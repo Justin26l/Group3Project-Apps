@@ -23,6 +23,7 @@ export class CartService {
       this.cart[ this.menu.rawFoodList[k].menu_id ] = menu.rawFoodList[k];
       this.cart[ this.menu.rawFoodList[k].menu_id ]['qty'] = 0;
     });
+    console.log(this.cart)
   }
 
   cart_add(id){

@@ -17,25 +17,6 @@ export class Tab2Page {
   ) {}
 
   ngOnInit(){
-    this.http.get(this.glob.base_url+"api/read/menu").subscribe({
-      next:(data)=>{
-        let result=data['result'];
-        // console.log(result);
 
-        result.forEach(x => {
-          if(! this.menu.FoodList[x.category]){
-            this.menu.FoodList[x.category]=[x];
-          }else{
-            this.menu.FoodList[x.category].push(x);
-          };
-        });
-        this.menu.FoodCategory = Object.keys(this.menu.FoodList);
-        console.log(this.menu.FoodList);
-      },
-      error:(data)=>{
-        console.log(data);
-      }
-    });
-    
   }
 }

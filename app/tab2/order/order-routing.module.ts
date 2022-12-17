@@ -11,10 +11,10 @@ const routes: Routes = [
   {
     path: 'order-menu',
     loadChildren: () => import('./order-menu/order-menu.module').then( m => m.OrderMenuPageModule)
-  },
+  } ,
   {
-    path: 'order-menu-category',
-    loadChildren: () => import('./order-menu-category/order-menu-category.module').then( m => m.OrderMenuCategoryPageModule)
+    path: 'checkout',
+    loadChildren: () => import('./checkout/checkout.module').then( m => m.CheckoutPageModule)
   }
 ];
 
