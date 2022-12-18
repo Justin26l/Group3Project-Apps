@@ -36,22 +36,6 @@ export class Tab1Page {
 				}
 			}
 		);
-
-		//   this.branchList = [
-		//     {"id":1, "name": "McDonald's Mount Austin", "description":"McDonalds", "image":"assets/McDonald's Mount Austin.jpg"},
-		//     {"id":2, "name": "McDonald's Taman Daya", "description":"McDonalds", "image":"assets/McDonald's Taman Daya.jpg"},
-		//     {"id":3, "name": "McDonald's Setia tropika", "description":"McDonalds", "image":"assets/McDonald's Setia tropika.jpg"}
-		//   ];  
-
-		// }
-
-
-		// fetchData(){
-		//   this.http.get('http://localhost/Group3Project/api/read/branch').subscribe(
-		//     (data:any) => {
-		//       this.branchList = data;
-		//     }
-		//   )
 	}
 
 }

@@ -8,6 +8,7 @@ import { AlertService } from './alert.service';
 export class BranchService {
 
   public branchList = {};
+  
   constructor(
     private http: HttpClient,
     private alert: AlertService
@@ -23,6 +24,8 @@ export class BranchService {
       }
     })
   }
+
+  /////////////////
 
   getBranchList(token:string){
     return this.http.get('http://localhost/Group3Project/api/read/branch/'+token);

@@ -14,7 +14,12 @@ const routes: Routes = [
   {
     path: 'thanks',
     loadChildren: () => import('./thanks/thanks.module').then( m => m.ThanksPageModule)
+  },
+  {
+    path: 'branch-detail',
+    loadChildren: () => import('./branch-detail/branch-detail.module').then( m => m.BranchDetailPageModule)
   }
+
 
 
 ];

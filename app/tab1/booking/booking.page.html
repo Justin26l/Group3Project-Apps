@@ -9,35 +9,25 @@
 
 <ion-content>
   <form [formGroup]="bookingForm" class="ion-padding">
-    <ion-item>
+
+    <ion-datetime class="ion-padding-bottom ion-margin-bottom" [clearInput]="true" formControlName="book_time" presentation="time-date" min="{{ISO_date_now}}"></ion-datetime>
+
+    <ion-item class="ion-padding-bottom">
       <ion-label for="name">Name:</ion-label>
-      <ion-input id="name" [clearInput]="true" formControlName="name" type="name" placeholder="Please input your name">
-      </ion-input>
+      <ion-input [clearInput]="true" formControlName="name" type="name" placeholder="Please input your name"></ion-input>
     </ion-item>
-    <br/>
-    <br/>
-    <ion-item>
+
+    <ion-item class="ion-padding-bottom">
       <ion-label for="name">Person:</ion-label>
-      <ion-input id="name" [clearInput]="true" formControlName="person" type="number" placeholder="Please input your person">
-      </ion-input>
+      <ion-input [clearInput]="true" formControlName="person" type="number" placeholder="Please input your person"></ion-input>
     </ion-item>
-    <br/>
-    <br/>
-    <ion-item>
-      <ion-label for="name">Booking_Time:</ion-label>
-      <ion-input id="name" [clearInput]="true" formControlName="booking_time" type="time" placeholder="Please input your booking_time">
-      </ion-input>
-    </ion-item>
-    <br/>
-    <br/>
+
     <ion-item>
       <ion-label for="name">Comment:</ion-label>
-      <ion-input id="name" [clearInput]="true" formControlName="comment" type="text" placeholder="Please input your comment">
-      </ion-input>
+      <ion-input [clearInput]="true" formControlName="comment" type="text" placeholder="Please input your comment"></ion-input>
     </ion-item>
 
-
-      <ion-button expand="full" (click)="submitBooking()">Submit</ion-button>
+    <ion-button expand="full" (click)="submitBooking()">Submit</ion-button>
     
   </form>
 </ion-content>
