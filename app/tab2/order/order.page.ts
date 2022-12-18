@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
-import { identity } from 'rxjs';
 import { AlertService } from 'src/app/services/alert.service';
 import { BranchService } from 'src/app/services/branch.service';
 import { CartService } from 'src/app/services/cart.service';
@@ -13,8 +11,7 @@ import { CartService } from 'src/app/services/cart.service';
 })
 export class OrderPage implements OnInit {
 
-  private ISO_date_now = (new Date (new Date().getTime() - new Date().getTimezoneOffset()*60000) ).toISOString().slice(0,19);
-  private time_preprocess = this.ISO_date_now;
+  // private ISO_date_now = (new Date (new Date().getTime() - new Date().getTimezoneOffset()*60000) ).toISOString().slice(0,19);
 
   private orderForm = {
     order_branch : "",
@@ -48,12 +45,12 @@ export class OrderPage implements OnInit {
   toMenu(){
     
     // format date time
-    if(!this.orderForm.is_dine){
-      this.orderForm.pickup_time = this.time_preprocess.slice(0,19).replace("T"," ");
-      this.orderForm.table = "";
-    }else{
-      this.orderForm.pickup_time = "";
-    };
+    // if(!this.orderForm.is_dine){
+    //   this.orderForm.pickup_time = this.ISO_date_now.slice(0,19).replace("T"," ");
+    //   this.orderForm.table = "";
+    // }else{
+    //   this.orderForm.pickup_time = "";
+    // };
 
     // form validation
     if( 
@@ -62,13 +59,14 @@ export class OrderPage implements OnInit {
       (this.orderForm.is_dine && this.orderForm.table=="") || 
       (!this.orderForm.is_dine && this.orderForm.pickup_time=="")
     ){
-      this.alert.presentAlert("Warning","Please fill all of the form.");
+      this.alert.presentAlert("Warning","Please fill all of the form.","");
       return;
     };
 
     // to next step
     this.cart.order = this.orderForm;
     // console.log(this.cart.order);
+    
     this.route.navigateByUrl('/tabs/tab2/order/order-menu');
   }
 

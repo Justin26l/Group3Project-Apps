@@ -12,18 +12,18 @@
   <ion-card class="p-1">
     <h1 class="ion-text-center">Invoice</h1>
     <ion-grid>
-      <ion-row *ngFor="let x of cart.cart | keyvalue">
-        <ion-col size="4">{{x.value.prod_name}}</ion-col>
-        <ion-col size="3">@{{x.value.price}}</ion-col>
-        <ion-col size="2">x{{x.value.qty}}</ion-col>
-        <ion-col size="3">RM {{ (x.value.price * x.value.qty).toFixed(2) }}</ion-col>
+      <ion-row *ngFor="let x of cart.order.items | keyvalue">
+        <ion-col size="4">{{x.value.n}}</ion-col>
+        <ion-col size="3">@{{x.value.p}}</ion-col>
+        <ion-col size="2">x{{x.value.q}}</ion-col>
+        <ion-col size="3">RM {{ (x.value.p * x.value.q).toFixed(2) }}</ion-col>
       </ion-row>
     </ion-grid>
     <div class="ion-text-end ion-padding-end ion-padding-top">
       <span class="ion-margin-end">total : </span>
       <h1>RM {{cart.total}}</h1>
     </div>
-    <ion-button expand="full" color="success" *ngIf="cart.order.is_dine" (click)="checkout('cash')"><b>CASH</b></ion-button>
+    <ion-button expand="full" color="success" *ngIf="cart.order.is_dine" (click)="checkout('cash')"><b>Place Order</b></ion-button>
     <!-- <ion-button expand="full" color="secondary" (click)="checkout()"><b>Online Payment</b></ion-button> -->
 
   </ion-card>

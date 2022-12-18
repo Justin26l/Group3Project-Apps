@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { GlobalVariableService } from '../services/global-variable.service';
-import { MenuService } from '../services/menu.service';
+import { GlobalVariableService } from '../../services/global-variable.service';
+import { MenuService } from '../../services/menu.service';
 
 @Component({
   selector: 'app-menu-category',

@@ -11,7 +11,6 @@ export class CartService {
     items:[]
   };
   public cart  = {};
-  public items = [];
   public total = 0 ;
   
   constructor(
@@ -23,6 +22,7 @@ export class CartService {
       this.cart[ this.menu.rawFoodList[k].menu_id ] = menu.rawFoodList[k];
       this.cart[ this.menu.rawFoodList[k].menu_id ]['qty'] = 0;
     });
+    console.log(this.cart)
   }
 
   cart_add(id){
@@ -38,19 +38,16 @@ export class CartService {
   };
 
   out_cart(){
-
+    this.order.items = [];
     this.total = 0;
 
     Object.keys(this.cart).forEach((k) => {
       let item = this.cart[k];
-
-      if(item.qty == 0){
-        delete this.cart[k];
-        // delete 0 qty item from all prod list
-      }else{
-        // build to app required data & count total
+      
+      // build api readable data & count total
+      if(item.qty != 0){
         this.total += (item.price * item.qty);
-        this.items.push({    
+        this.order.items.push({    
           i: item.menu_id,
           n: item.prod_name,
           p: item.price,
@@ -62,8 +59,8 @@ export class CartService {
     });
 
     this.total = parseFloat(this.total.toFixed(2));
-    this.order.items = this.items;
     this.route.navigateByUrl('tabs/tab2/order/checkout');
   }
 
 }
+

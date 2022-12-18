@@ -6,7 +6,16 @@ const routes: Routes = [
   {
     path: '',
     component: Tab2Page,
+  },
+  {
+    path: 'order',
+    loadChildren: () => import('./order/order.module').then( m => m.OrderPageModule)
+  },
+  {
+    path: 'checkout',
+    loadChildren: () => import('./order/checkout/checkout.module').then( m => m.CheckoutPageModule)
   }
+
 ];
 
 @NgModule({
