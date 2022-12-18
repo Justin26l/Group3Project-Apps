@@ -59,6 +59,7 @@ export class CartService {
     });
 
     this.total = parseFloat(this.total.toFixed(2));
+    this.order['total'] = this.total;
     this.route.navigateByUrl('tabs/tab2/order/checkout');
   }
 

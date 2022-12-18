@@ -28,7 +28,6 @@ export class CheckoutPage implements OnInit {
     this.http.post(
       this.glob.base_url + "api/create/order",
       {"create":this.cart.order,"token":token}
-      
       ).subscribe({
       next: (data) => {
         if(data['status'] == 'ok'){
